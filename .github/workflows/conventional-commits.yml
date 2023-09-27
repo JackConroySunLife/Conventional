@@ -1,24 +1,38 @@
-name: "Lint PR"
+# name: "Lint PR"
+
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+
+# permissions:
+#   pull-requests: read
+
+# jobs:
+#   main:
+#     name: Validate PR title
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: amannn/action-semantic-pull-request@v5
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+name: Conventional Commits
 
 on:
-  # push:
-  #   branches: [ "main" ]
-  # pull_request:
-  #   branches: [ "main" ]
-  pull_request_target:
-    types:
-      - opened
-      - edited
-      - synchronize
-
-permissions:
-  pull-requests: read
+  pull_request:
+    branches: [ master ]
 
 jobs:
-  main:
-    name: Validate PR title
+  build:
+    name: Conventional Commits
     runs-on: ubuntu-latest
     steps:
-      - uses: amannn/action-semantic-pull-request@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+
+      - uses: webiny/action-conventional-commits@v1.1.0
+        # optional, required for private repos
+        # with:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
