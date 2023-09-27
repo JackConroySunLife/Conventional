@@ -7,7 +7,7 @@ on:
     types: [opened, reopened, edited, ready_for_review, labeled, synchronize]
 
 permissions:
-  pull-requests: read
+  pull-requests: write
 
 jobs:
   main:
