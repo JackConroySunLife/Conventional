@@ -2,7 +2,9 @@ name: "Lint PR"
 
 on:
   pull_request:
-    types: [opened, reopened, edited, ready_for_review, labeled, synchronize]
+    branches:
+      - main
+    # types: [opened, reopened, edited, ready_for_review, labeled, synchronize]
 
 permissions:
   pull-requests: write
