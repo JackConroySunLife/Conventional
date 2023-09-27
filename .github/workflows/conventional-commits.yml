@@ -38,9 +38,9 @@
 #         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 name: semantic-pull-request
-  on:
-    pull_request:
-      types: [opened, reopened, edited, ready_for_review, labeled, synchronize]
+on:
+  pull_request:
+    types: [opened, reopened, edited, ready_for_review, labeled, synchronize]
   
 jobs:
   action-semantic-pull-request:
