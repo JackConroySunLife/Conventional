@@ -3,10 +3,6 @@ name: "Lint PR"
 permissions:
   pull-requests: write
 
-on:
-  pull_request:
-    types: [opened, reopened, edited, ready_for_review, labeled, synchronize]
-
 jobs:
   main:
     name: Validate PR title
