@@ -1,11 +1,15 @@
 name: "Lint PR"
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
 
 permissions:
   pull-requests: read
