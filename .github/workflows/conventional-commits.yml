@@ -42,10 +42,12 @@ on:
   pull_request:
     types: [opened, reopened, edited, ready_for_review, labeled, synchronize]
   
+permissions:
+  pull-requests: read
+
 jobs:
   action-semantic-pull-request:
     name: action-semantic-pull-request
-    permissions: read
     runs-on: ubuntu-latest
     steps:
       - name: Validate PR title
