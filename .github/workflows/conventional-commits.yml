@@ -38,10 +38,6 @@
 #         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 name: semantic-pull-request
-
-permissions:
-  pull-requests: read
-
 on:
   pull_request:
     types: [opened, reopened, edited, ready_for_review, labeled, synchronize]
@@ -49,6 +45,7 @@ on:
 jobs:
   action-semantic-pull-request:
     name: action-semantic-pull-request
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Validate PR title
