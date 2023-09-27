@@ -41,6 +41,9 @@ name: semantic-pull-request
 on:
   pull_request:
     types: [opened, reopened, edited, ready_for_review, labeled, synchronize]
+
+permissions:
+  pull-requests: write
   
 jobs:
   action-semantic-pull-request:
